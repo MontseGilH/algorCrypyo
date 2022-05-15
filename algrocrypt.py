@@ -15,11 +15,21 @@ def crearEyD(p,q,e1):
             e+=1
     else: 
         e=e1
-    d=0
-    for i in range(phi):
-        if (i*e)%phi==1:
-            d=i     
+    d=inverso2(e,phi)   
     return e,d
+
+def inverso1(num1,num2):
+    if num1==0:
+        return (num2,0,1)
+    else:
+        a,b,c = inverso1(num2%num1,num1)
+        return (a,c-(num2//num1)*b,b)
+    
+def inverso2(num,mod):
+    a,b,c=inverso1(num,mod)
+    if a !=1:
+        return False
+    return b%mod 
 
 def mcd(num1,num2):
     fin=False
@@ -93,9 +103,11 @@ class Encriptor:
     def desencript(self,string):
         return desencriptar(self.d,self.n,string,self.b)
 
-encr=Encriptor(43,59,False)
+encr=Encriptor(953647,953593,False)
 mensEncr=encr.encript("hola como estas maria")
 mensajeDesencr=encr.desencript(mensEncr)
 print(mensEncr)
 print(mensajeDesencr)
+
+
 
