@@ -103,11 +103,8 @@ class Encriptor:
     def desencript(self,string):
         return desencriptar(self.d,self.n,string,self.b)
 
-encr=Encriptor(953647,953593,False)
+encr=Encriptor(104729,953593,False)
 mensEncr=encr.encript("hola como estas maria")
 mensajeDesencr=encr.desencript(mensEncr)
 print(mensEncr)
 print(mensajeDesencr)
-
-
-
