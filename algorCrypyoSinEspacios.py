@@ -53,15 +53,15 @@ def mod(n,p,m):
 
 def b(n):
     b=0
-    lim="26"
+    lim="25"
     while int(lim)<n:
         b+=2
-        lim+="26"
+        lim+="25"
     return b
             
 def encriptar(n,e,string,b):
     letras= {
-        " ":"00","a":"01","b":"02","c":"03","d":"04","e":"05","f":"06","g":"07","h":"08","i":"09","j":"10","k":"11","l":"12","m":"13","n":"14","o":"15","p":"16","q":"17","r":"18","s":"19","t":"20","u":"21","v":"22","w":"23","x":"24","y":"25","z":"26",
+        "a":"00","b":"01","c":"02","d":"03","e":"04","f":"05","g":"06","h":"07","i":"08","j":"09","k":"10","l":"11","m":"12","n":"13","o":"14","p":"15","q":"16","r":"17","s":"18","t":"19","u":"20","v":"21","w":"22","x":"23","y":"24","z":"25"
     }
     mensajeNum=""
     for s in string.lower():
@@ -78,7 +78,7 @@ def encriptar(n,e,string,b):
     return mensajeEntript
 
 def desencriptar(d,n,mensaje,b):
-    letras=[" ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    letras=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
     bloques=mensaje.split()
     final=""
     for bloque in bloques:
@@ -103,8 +103,8 @@ class Encriptor:
     def desencript(self,string):
         return desencriptar(self.d,self.n,string,self.b)
 
-encr=Encriptor(104729,953593,False)
-mensEncr=encr.encript("hola como estas maria")
-mensajeDesencr=encr.desencript(mensEncr)
-print(mensEncr)
+encr=Encriptor(43,59,13)
+#mensEncr=encr.encript("upload")
+mensajeDesencr=encr.desencript("0667 1947 0671")
+#print(mensEncr)
 print(mensajeDesencr)
